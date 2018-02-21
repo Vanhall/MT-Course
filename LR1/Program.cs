@@ -20,11 +20,11 @@ namespace LR1
             Console.WriteLine(Operators);                   //
 
             // Методы
-            Console.WriteLine(KeyWords.Contains("main") + "| expected: True");
-            Console.WriteLine(KeyWords.Contains("for") + "| expected: False");
-            Console.WriteLine(KeyWords.Find("while") + "| expected: 2");
-            Console.WriteLine(KeyWords.GetToken(2) + "| expected: (0,2)");
-            Console.WriteLine(KeyWords.GetToken("int") + "| expected: (0,1)");
+            Console.WriteLine(KeyWords.Contains("main") + "| expected: True");  // Есть ли в таблице?
+            Console.WriteLine(KeyWords.Contains("for") + "| expected: False");  //
+            Console.WriteLine(KeyWords.Find("while") + "| expected: 2");        // Поиск (значение)
+            Console.WriteLine(KeyWords.GetToken(2) + "| expected: (0,2)");      // Получаем токен (индекс)
+            Console.WriteLine(KeyWords.GetToken("int") + "| expected: (0,1)");  // Получаем токен (зачение)
             Console.WriteLine();
 
             // Переменные таблицы ---------------------------------------------
