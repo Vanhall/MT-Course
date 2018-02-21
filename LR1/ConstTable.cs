@@ -2,8 +2,15 @@
 
 namespace LR1
 {
+    /// <summary>
+    /// Постоянная таблица
+    /// </summary>
     public class ConstTable : BaseTable<string, int>
     {
+        /// <summary>
+        /// Конструктор (массив)
+        /// </summary>
+        /// <param name="Lexems">массив лексем</param>
         public ConstTable(string[] Lexems) : base()
         {
             int i = 0;
@@ -17,6 +24,10 @@ namespace LR1
             }
         }
 
+        /// <summary>
+        /// Конструктор (файл)
+        /// </summary>
+        /// <param name="FilePath">Путь к файлу</param>
         public ConstTable(string FilePath) : base()
         {
             int i = 0;

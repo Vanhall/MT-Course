@@ -1,15 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LR1
+﻿namespace LR1
 {
+    /// <summary>
+    /// Переменная таблица
+    /// </summary>
     public class VarTable : BaseTable<string, Attribs>
     {
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public VarTable() : base() { }
 
+        /// <summary>
+        /// Добавление элемента
+        /// </summary>
+        /// <param name="Id">Добавляемый элемент</param>
+        /// <returns>True если операция успешна, иначе False</returns>
         public bool Add(string Id)
         {
             if (!table.ContainsKey(Id))
@@ -22,6 +27,12 @@ namespace LR1
                 return false;
         }
 
+        /// <summary>
+        /// Get-функция для атрибутов идентификатора
+        /// </summary>
+        /// <param name="Id">Имя идентификатора</param>
+        /// <param name="Attributes">Возвращаемая структура атрибутов</param>
+        /// <returns>True если операция успешна, иначе False</returns>
         public bool GetAttribs(string Id, out Attribs Attributes)
         {
             if (table.ContainsKey(Id))
@@ -36,6 +47,12 @@ namespace LR1
             }
         }
 
+        /// <summary>
+        /// Set-функция для атрибутов идентификатора
+        /// </summary>
+        /// <param name="Id">Имя идентификатора</param>
+        /// <param name="Attributes">Cтруктура атрибутов</param>
+        /// <returns>True если операция успешна, иначе False</returns>
         public bool SetAttribs(string Id, Attribs Attributes)
         {
             if (table.ContainsKey(Id))
