@@ -64,7 +64,7 @@ namespace LR1
         /// </summary>
         /// <param name="Index">Искомый индекс</param>
         /// <returns>True если индекс есть в таблице, иначе False</returns>
-        public bool Contains(int Index) => (Index >= 0 && Index < indexer.Count) ? true : false;
+        public bool Contains(int Index) => (Index >= 0 && Index < indexer.Count);
 
         /// <summary>
         /// Поиск элемента по индексу
