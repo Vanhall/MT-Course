@@ -75,6 +75,30 @@ namespace LR2
         }
 
         /// <summary>
+        /// Конструктор.
+        /// </summary>
+        public FiniteStateMachine(
+            ConstTable KeyWords,
+            ConstTable Delimiters,
+            ConstTable Operations,
+            VarTable Constants,
+            VarTable Identifiers
+            )
+        {
+            State = States.Start;
+            this.KeyWords = KeyWords;
+            this.Delimiters = Delimiters;
+            this.Operations = Operations;
+            this.Constants = Constants;
+            this.Identifiers = Identifiers;
+            Letters = new ConstTable(@"Tables/Letters.txt");
+            Digits = new ConstTable(@"Tables/Digits.txt");
+
+            Buffer = "";
+            StepBack = false;
+        }
+
+        /// <summary>
         /// Обработка очередного символа.
         /// </summary>
         /// <param name="C">Обрабатываемый символ.</param>

@@ -1,9 +1,11 @@
-﻿namespace LR1
+﻿using System;
+
+namespace LR1
 {
     /// <summary>
     /// Класс, реализующий токен
     /// </summary>
-    public class Token
+    public class Token : IEquatable<Token>
     {
         /// <summary>
         /// Идентификатор таблицы
@@ -33,6 +35,24 @@
         public override string ToString()
         {
             return "(" + TableID + "," + Index + ")";
+        }
+
+        public bool Equals(Token other)
+        {
+            return (TableID == other.TableID && Index == other.Index);
+        }
+
+        public override bool Equals(object obj)
+        {
+            var other = obj as Token;
+            if (other == null) return false;
+
+            return Equals(other);
+        }
+
+        public override int GetHashCode()
+        {
+            return TableID.GetHashCode() + Index.GetHashCode();
         }
     }
 }

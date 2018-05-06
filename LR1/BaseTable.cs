@@ -51,7 +51,26 @@ namespace LR1
                 return new Token(ID, indexer.IndexOf(Lexem));
             else return null;
         }
-        
+
+        public Token this[int Index]
+        {
+            get
+            {
+                if (Index >= 0 && Index < indexer.Count) return new Token(ID, Index);
+                else return null;
+            }
+        }
+
+        public Token this[T Lexem]
+        {
+            get
+            {
+                if (table.ContainsKey(Lexem))
+                    return new Token(ID, indexer.IndexOf(Lexem));
+                else return null;
+            }
+        }
+
         /// <summary>
         /// Содержит ли таблица лексему
         /// </summary>
@@ -95,6 +114,13 @@ namespace LR1
             for (int i = 0; i < indexer.Count; i++)
                 sb.AppendFormat("{0}\t| {1}\t| {2}\n", i, indexer[i], GetToken(i));
             return sb.ToString();
+        }
+        
+        public Token[] ToArray()
+        {
+            var Tokens = new List<Token>();
+            for (int i = 0; i < indexer.Count; i++) Tokens.Add(this[i]);
+            return Tokens.ToArray();
         }
     }
 }

@@ -1,0 +1,5 @@
+﻿void
+const
+int
+main
+while

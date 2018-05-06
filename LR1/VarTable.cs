@@ -1,4 +1,7 @@
-﻿namespace LR1
+﻿using System.IO;
+using System.Text;
+
+namespace LR1
 {
     /// <summary>
     /// Переменная таблица
@@ -9,6 +12,23 @@
         /// Конструктор
         /// </summary>
         public VarTable() : base() { }
+
+        /// <summary>
+        /// Конструктор (файл)
+        /// </summary>
+        /// <param name="FilePath">Путь к файлу</param>
+        public VarTable(string FilePath) : base()
+        {
+            string[] lexems = File.ReadAllLines(FilePath);
+            foreach (string lexeme in lexems)
+            {
+                if (!table.ContainsKey(lexeme))
+                {
+                    table.Add(lexeme, new Attribs());
+                    indexer.Add(lexeme);
+                }
+            }
+        }
 
         /// <summary>
         /// Добавление элемента
