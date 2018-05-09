@@ -47,8 +47,8 @@ namespace LR2
                     {
                         string errMsg = "Ошибка в строке " + lineNumber + ": " + Ex.Message;
                         Console.WriteLine(errMsg);
-                        File.WriteAllText(Directory.GetCurrentDirectory() + @"\" + testFile + ".out.txt", errMsg);
-                        Console.ReadKey();
+                        File.WriteAllText(Directory.GetCurrentDirectory() + @"\" + testFile + ".lex.out.txt", errMsg);
+                        //Console.ReadKey();
                         return null;
                     }
 
@@ -87,15 +87,15 @@ namespace LR2
             {
                 string errMsg = "Ошибка в строке " + lineNumber + ": незакрытый блочный комментарий";
                 Console.WriteLine(errMsg);
-                File.WriteAllText(Directory.GetCurrentDirectory() + @"\" + testFile + ".out.txt", errMsg);
-                Console.ReadKey();
+                File.WriteAllText(Directory.GetCurrentDirectory() + @"\" + testFile + ".lex.out.txt", errMsg);
+                //Console.ReadKey();
             }
             else
             {
-                File.WriteAllLines(Directory.GetCurrentDirectory() + @"\" + testFile + ".out.txt", Output);
-                File.WriteAllText(Directory.GetCurrentDirectory() + @"\" + testFile + ".out.tables.txt", FSM.PrintTables());
+                //File.WriteAllLines(Directory.GetCurrentDirectory() + @"\" + testFile + ".lex.out.txt", Output);
+                //File.WriteAllText(Directory.GetCurrentDirectory() + @"\" + testFile + ".lex.out.tables.txt", FSM.PrintTables());
                 Console.WriteLine("Лексический анализ успешно завершен.");
-                Console.ReadKey();
+                //Console.ReadKey();
             }
             return result.ToArray();
         }

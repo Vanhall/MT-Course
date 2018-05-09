@@ -52,7 +52,7 @@ namespace LR1
 
         public override int GetHashCode()
         {
-            return TableID.GetHashCode() + Index.GetHashCode();
+            return ToString().GetHashCode();
         }
     }
 }

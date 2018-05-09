@@ -83,5 +83,44 @@ namespace LR1
             else
                 return false;
         }
+
+        /// <summary>
+        /// Get-функция для атрибутов идентификатора
+        /// </summary>
+        /// <param name="T">Имя идентификатора</param>
+        /// <param name="Attributes">Возвращаемая структура атрибутов</param>
+        /// <returns>True если операция успешна, иначе False</returns>
+        public bool GetAttribs(Token T, out Attribs Attributes)
+        {
+            string id = Find(T.Index);
+            if (table.ContainsKey(id))
+            {
+                Attributes = table[id];
+                return true;
+            }
+            else
+            {
+                Attributes = new Attribs();
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Set-функция для атрибутов идентификатора
+        /// </summary>
+        /// <param name="T">Имя идентификатора</param>
+        /// <param name="Attributes">Cтруктура атрибутов</param>
+        /// <returns>True если операция успешна, иначе False</returns>
+        public bool SetAttribs(Token T, Attribs Attributes)
+        {
+            string id = Find(T.Index);
+            if (table.ContainsKey(id))
+            {
+                table[id] = Attributes;
+                return true;
+            }
+            else
+                return false;
+        }
     }
 }

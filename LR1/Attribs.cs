@@ -8,25 +8,20 @@
         /// <summary>
         /// Инициализирован ли идентификатор?
         /// </summary>
-        public bool Init;
+        public bool HasType;
 
         /// <summary>
         /// Тип идентификатора
         /// </summary>
-        public int IDType;
-
-        /// <summary>
-        /// Значение идентификатора
-        /// </summary>
-        public int Val;
-
+        public bool HasValue;
+        
         /// <summary>
         /// Переопределение стандартного метода ToString
         /// </summary>
         /// <returns>Строковое представление объекта</returns>
         public override string ToString()
         {
-            return "Initialized = " + Init + "; Type = " + IDType + "; Value = " + Val;
+            return "Type defined = " + HasType + "; Initialized = " + HasValue;
         }
     }
 }

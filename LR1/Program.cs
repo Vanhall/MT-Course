@@ -45,7 +45,7 @@ namespace LR1
             Identifiers.GetAttribs("a", out A); // Получаем
             Console.WriteLine(A);
 
-            A.Init = true; A.IDType = 1; A.Val = -100500;
+            A.HasType = true; A.HasValue = true;
             Identifiers.SetAttribs("a", A);     // Задаем
             Identifiers.GetAttribs("a", out A);
             Console.WriteLine(A);
