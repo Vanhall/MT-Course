@@ -36,7 +36,7 @@ namespace LR1
         {
             return "(" + TableID + "," + Index + ")";
         }
-
+        
         public bool Equals(Token other)
         {
             return (TableID == other.TableID && Index == other.Index);

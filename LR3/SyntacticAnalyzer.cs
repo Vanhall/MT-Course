@@ -179,10 +179,8 @@ namespace LR3
             };
         }
 
-        public Token[] AnalyzeTokens(Token[] Tokens)
+        public void AnalyzeTokens(Token[] Tokens)
         {
-            var result = new List<Token>();
-
             var Token = ((IEnumerable<Token>)Tokens).GetEnumerator();
             int CurrentState = 0;
             bool hasNext = Token.MoveNext();
@@ -336,8 +334,6 @@ namespace LR3
                     else CurrentState++;
                 }
             }
-
-            return result.ToArray();
         }
 
         Token[] RPN(Token[] InputString)

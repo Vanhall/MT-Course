@@ -4,7 +4,7 @@
 .DATA
 a DD ?
 b DD ?
-c DD ?
+s DD ?
 
 .CODE
 MAIN PROC
@@ -15,10 +15,10 @@ MOV b, EBX
 MOV EAX, 2
 MOV EBX, b
 ADD EAX, EBX
-MOV c, EAX
+MOV s, EAX
 
 MOV EAX, b
-MOV EBX, c
+MOV EBX, s
 ADD EAX, EBX
 MOV EBX, 7
 SUB EAX, EBX
@@ -43,7 +43,7 @@ MOV a, EAX
 L2:
 PUSH EAX
 PUSH EBX
-MOV EAX, c
+MOV EAX, s
 MOV EBX, 3
 CMP EAX, EBX
 
@@ -52,9 +52,9 @@ POP EAX
 JL L3
 
 MOV EAX, a
-MOV EBX, c
+MOV EBX, s
 SUB EAX, EBX
-MOV c, EAX
+MOV s, EAX
 
 JMP L2
 L3:

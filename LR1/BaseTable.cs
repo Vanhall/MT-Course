@@ -30,6 +30,12 @@ namespace LR1
         }
 
         /// <summary>
+        /// Количество элементов в таблице
+        /// </summary>
+        /// <returns>Количество элементов в таблице</returns>
+        public int Count() => indexer.Count;
+
+        /// <summary>
         /// Get-функция токена (по индексу)
         /// </summary>
         /// <param name="Index">Индекс искомого токена</param>

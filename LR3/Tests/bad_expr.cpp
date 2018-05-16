@@ -1,7 +1,6 @@
 ﻿void main()
 {
 	int a;
-	int b;
-	b = 1;
+	int b = 1;
 	a = b < 3;
 }
